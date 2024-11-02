@@ -1,4 +1,4 @@
-{% set version = "0.2.2" %}
+{% set version = "0.2.3" %}
 
 package:
   name: vale-styles-alex
@@ -8,7 +8,7 @@ source:
   - folder: alex
     fn: vale-alex-0.2.1.zip
     url: https://github.com/errata-ai/alex/releases/download/v{{ version }}/alex.zip
-    sha256: 7305960bf51f1bacbdf4a76d4dd649994717d2569905fc828bdd808f55509cfa
+    sha256: 44014c7f63d4a8bce86788e074edb80333a9b6eba07e5dd27b24823b69eed50b
   - fn: LICENSE-vale-alex-0.2.1
     url: https://raw.githubusercontent.com/errata-ai/alex/v{{ version }}/LICENSE
     sha256: 08fb0509895870677046735e0827597e0ae7fe805e00697a86a93711cbb178a1
