@@ -43,7 +43,7 @@ BasedOnStyles = {name}
 """
 
 MD_WITH_AN_ISSUE = """
-# hello world
+ancient man
 """
 
 # output
@@ -52,20 +52,52 @@ EXPECT_JSON = """
     "README.md": [
       {
         "Action": {
-          "Name": "",
-          "Params": null
+          "Name": "replace",
+          "Params": [
+            "ancient civilization",
+            "ancient people"
+          ]
         },
-        "Suggestions": [],
-        "Span": [
-          3,
-          13
+        "Suggestions": [
+          "ancient civilization",
+          "ancient people"
         ],
-        "Check": "Microsoft.Headings",
+        "Span": [
+          1,
+          11
+        ],
+        "Check": "alex.GenderedPhrases",
         "Description": "",
-        "Link": "https://learn.microsoft.com/en-us/style-guide/capitalization",
-        "Message": "'hello world' should use sentence-style capitalization.",
-        "Severity": "suggestion",
-        "Match": "hello world",
+        "Link": "https://github.com/retextjs/retext-equality#readme",
+        "Message": "'ancient man' may be insensitive, use 'ancient civilization' or 'ancient people' instead.",
+        "Severity": "warning",
+        "Match": "ancient man",
+        "Line": 2
+      },
+      {
+        "Action": {
+          "Name": "replace",
+          "Params": [
+            "people",
+            "persons",
+            "folks"
+          ]
+        },
+        "Suggestions": [
+          "people",
+          "persons",
+          "folks"
+        ],
+        "Span": [
+          9,
+          11
+        ],
+        "Check": "alex.Gendered",
+        "Description": "",
+        "Link": "https://github.com/retextjs/retext-equality#readme",
+        "Message": "'man' may be insensitive, use 'people', 'persons', or 'folks' instead.",
+        "Severity": "warning",
+        "Match": "man",
         "Line": 2
       }
     ]

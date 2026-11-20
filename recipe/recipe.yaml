@@ -19,9 +19,12 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://github.com/errata-ai/${{ vale_name }}/releases/download/v${{ version }}/${{ vale_name }}.zip
-  sha256: 3a45aafdb867964d7282a8c1f425d0b58e20f905d0e177f347c0e0c0712a6c7c
-  target_directory: ${{ vale_name }}
+  - url: https://github.com/errata-ai/${{ vale_name }}/releases/download/v${{ version }}/${{ vale_name }}.zip
+    sha256: 3a45aafdb867964d7282a8c1f425d0b58e20f905d0e177f347c0e0c0712a6c7c
+    target_directory: ${{ vale_name }}
+  - url: https://raw.githubusercontent.com/vale-cli/${{ vale_name }}/refs/tags/v${{ version }}/LICENSE
+    target_directory: ${{ vale_name }}
+    sha256: 08fb0509895870677046735e0827597e0ae7fe805e00697a86a93711cbb178a1
 
 build:
   number: 0
@@ -39,7 +42,7 @@ tests:
       strict: true
       files:
         - ${{ styles }}/${{ vale_name }}/*.yml
-        - ${{ styles }}/${{ vale_name }}/LICENSE
+        - ${{ styles }}/${{ vale_name }}/{LICENSE,README.md}
         - ${{ styles }}/${{ vale_name }}/meta.json
   - requirements:
       run:
